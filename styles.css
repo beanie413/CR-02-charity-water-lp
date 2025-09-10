@@ -25,174 +25,250 @@ Fonts:
 
 /* Set up the main font and background color for the whole page */
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  color: #222;
-}
-
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
-}
-
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
+  font-family: 'Lato', sans-serif;
+  background-image: url('img/Madagascar_2019_CG-4246 (1).jpg');
+  background-size: cover;      /* Make the image cover the whole background */
+  background-repeat: no-repeat;/* Prevent the image from repeating */
   background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+  /* Add a fallback color in case the image doesn't load */
+  background-color: #8BD1CB;
+  color: #333;
 }
 
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
+h1 { 
+  font-family: 'Montserrat', Arial, sans-serif;  
+  line-height: 1.2;
+  margin: 10px 0px;
 }
 
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+p {
+  line-height: 1.6;
+  margin: 10px 0px;
+  padding: 20px 50px;
+  font-size: 1rem;
 }
 
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
+/* Header */
+header {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-bottom: 1px solid #eee;
 }
-
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
+header img.logo {
+  height: 20px;
+  margin-left: 200px;
 }
-
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Style the impact story image */
-.impact-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-}
-
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
+header .give-btn {
+  background-color: #ffc907;
+  color: #000;
+  padding: 10px 20px;
   border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: fit-content;
+  margin-right: 200px;
+}
+
+header .give-btn:hover {
+  background-color: #FF902A;
+}
+
+/* Hero Section */
+/* 
+  To brighten the background image, we add a semi-transparent white overlay using a simple CSS trick.
+  We use a linear-gradient with white and some opacity before the image.
+*/
+.hero {
+  display: flex; /* Use flexbox for horizontal alignment */
+  align-items: center; /* Vertically center items */
+  justify-content: flex-end; /* Align items to the right */
+  /* Add a white transparent overlay to brighten the image */
+  background-image: url('img/Madagascar_2019_CG-4246 (1).jpg');
+  background-size: 120%;      /* Make the image bigger (zoom in) */
+  background-repeat: no-repeat;
+  background-position: 90% 30%; /* Move image down and to the left */
+  height: 90vh;
+  padding: 40px;
+}
+
+/* CTA Card */
+/* 
+  To right align the cta-card, we use 'margin-left: auto' and 'margin-right: 0'.
+  'text-align: center' keeps everything inside the card centered.
+*/
+.cta-card {
+  background-color: #fff8e6;
+  padding: 60px 0px;         /* Increase padding for more space inside */
+  border-radius: 15px;
+  max-width: 400px;      /* Allow the card to be wider */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;    /* Center all text and inline elements */
+  margin: 75px 200px auto auto
+}
+.cta-card h1 {
+  font-size: 2.5rem;     /* Bigger heading */
+  margin-bottom: 25px;
+}
+.cta-card p {
+  font-size: 1.2rem;     /* Bigger paragraph */
+  margin-bottom: 35px;
+}
+.cta-card .donate-btn {
+  background-color: #ffc907;
+  color: #000;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
 }
-
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+.cta-card .donate-btn:hover {
+  background-color: #FF902A;
 }
 
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
+/* Footer styles */
+/* The footer is a solid white bar, same height and padding as the header */
+footer {
+  background-color: white;      /* Solid white background */
+  border-top: 1px solid #eee;   /* Light top border */
+  padding: 15px 30px;           /* Same padding as header */
+  text-align: center;           /* Center the text */
+  font-size: 0.8rem;            /* Smaller font size for footer */
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+  }
+  .cta-card {
+    margin-top: 20px;
+  }
 }
 
 /* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
+  Mobile styles for smartphones
+  These styles make the page look good and easy to use on small screens.
 */
-
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
 @media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
+  /* Make the header stack and fit the screen */
+  header {
+    flex-direction: column;      /* Stack logo and button vertically */
+    align-items: center;         /* Center items horizontally */
+    padding: 10px 5px;           /* Less padding for small screens */
+  }
+  header img.logo {
+    margin-left: 0;              /* Remove left margin */
+    margin-bottom: 10px;         /* Add space below logo */
+    height: 24px;                /* Slightly bigger logo for mobile */
+  }
+  header .give-btn {
+    margin-right: 0;             /* Remove right margin */
+    padding: 12px 18px;          /* Bigger button for easier tapping */
+    font-size: 1rem;
+  }
+
+  /* Make the hero section stack vertically and fit the screen */
   .hero {
-    padding: 32px 8px;
-    font-size: 1em;
+    flex-direction: column;      /* Stack items vertically */
+    align-items: center;         /* Center items horizontally */
+    justify-content: center;     /* Center items vertically */
+    background-size: cover;      /* Cover the whole area */
+    background-position: center; /* Center the image */
+    height: auto;                /* Let height fit content */
+    padding: 20px;
   }
 
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
+  /* Make the CTA card fill most of the screen width and add spacing */
+  .cta-card {
+    max-width: 95%;              /* Use almost full width */
+    padding: 30px 10px;          /* Smaller padding for mobile */
+    margin: 20px auto;           /* Center the card */
   }
 
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
+  /* Make text easier to read on small screens */
+  .cta-card h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .cta-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    padding: 10px 5px;
   }
 
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
+  /* Make buttons easier to tap */
+  .cta-card .donate-btn {
+    padding: 12px 18px;
+    font-size: 1rem;
   }
 
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
+  /* Responsive footer for mobile */
+  footer {
+    padding: 10px 5px;          /* Same as mobile header */
+    font-size: 0.8rem;          /* Keep font small on mobile */
   }
 }
 
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
+/* 
+  Tablet styles for screens between 601px and 1024px wide.
+  These styles make the page look good and easy to use on tablets.
+*/
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Header adjustments for tablet */
+  header {
+    padding: 15px 10px;           /* Less padding for tablet screens */
+  }
+  header img.logo {
+    margin-left: 0;               /* Remove left margin */
+    height: 28px;                 /* Slightly bigger logo for tablet */
+  }
+  header .give-btn {
+    margin-right: 0;              /* Remove right margin */
+    padding: 14px 22px;           /* Bigger button for easier tapping */
+    font-size: 1rem;
   }
 
-  .impact-image {
-    width: 300px;
+  /* Hero section adjustments for tablet */
+  .hero {
+    padding: 30px;
+    background-size: cover;      /* Cover the whole area */
+    background-position: center; /* Center the image */
+    height: auto;                /* Let height fit content */
+  }
+
+  /* CTA card adjustments for tablet */
+  .cta-card {
+    max-width: 80%;              /* Use 80% of the width */
+    padding: 40px 20px;          /* More padding for bigger screens */
+    margin: 50px auto;           /* Center the card with margin */
+  }
+  .cta-card h1 {
+    font-size: 2rem;             /* Slightly smaller heading */
+    margin-bottom: 20px;
+  }
+  .cta-card p {
+    font-size: 1.1rem;           /* Slightly bigger paragraph */
+    margin-bottom: 25px;
+  }
+  .cta-card .donate-btn {
+    padding: 14px 24px;
+    font-size: 1.1rem;
+  }
+
+  /* Responsive footer for tablet */
+  footer {
+    padding: 15px 10px;         /* Same as tablet header */
+    font-size: 0.8rem;          /* Keep font small on tablet */
   }
 }
